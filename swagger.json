@@ -1,0 +1,170 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API de l'application OpenData",
+    "version": "1.0.0",
+    "title": "OpenData"
+  },
+  "basePath": "/api/v1/",
+  "tags": [
+    {
+      "name": "Fiber",
+      "description": "Access to fiber deployment status"
+    },
+    {
+      "name": "GSM",
+      "description": "Access to GSM antenna location"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/fiber/{y}/{x}/": {
+      "get": {
+        "tags": [
+          "Fiber"
+        ],
+        "summary": "Get near fiber adress",
+        "description": "",
+        "operationId": "fiber.controller/getNearLocation",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x",
+            "in": "path",
+            "description": "longitude",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "in": "path",
+            "description": "latitude",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {
+              "application/json": {
+                "_id": "ObjectId(\"5e73b858a12308d6c7a35de9\")",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    2.20265170124948,
+                    45.1356337917411
+                  ]
+                },
+                "type": "Feature",
+                "properties": {
+                  "cp_no_voie": "",
+                  "imb_etat": "deploye",
+                  "type_imb": "pavillon",
+                  "catg_loc_imb": "individuel",
+                  "pm_etat": "deploye",
+                  "code_l331": "ATHD",
+                  "type_voie": "lieu dit",
+                  "nom_voie": "nebouzac",
+                  "code_poste": "15700",
+                  "pm_ref": "FI-15153-0001",
+                  "batiment": "0l 79",
+                  "num_voie": "0",
+                  "geom_mod": "t",
+                  "nom_com": "Pleaux",
+                  "imb_id": "IMB/15153/X/010X"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gsm/{y}/{x}/": {
+      "get": {
+        "tags": [
+          "GSM"
+        ],
+        "summary": "Get near gsm antenna",
+        "description": "",
+        "operationId": "gsm.controller/getNearLocation",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x",
+            "in": "path",
+            "description": "longitude",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "in": "path",
+            "description": "latitude",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {
+              "application/json": {
+                "_id": "ObjectId(\"5e73b2718dfb0165a1f0608c\")",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    166.42305555556,
+                    -20.723055555556
+                  ]
+                },
+                "type": "Feature",
+                "properties": {
+                  "emr_lb_systeme": "LTE 800",
+                  "sta_nm_dpt": "988",
+                  "adr_lb_add3": "",
+                  "adr_lb_add2": "",
+                  "adr_lb_add1": "",
+                  "code_insee": "98820",
+                  "nat_id": 12,
+                  "com_cd_insee": "98820",
+                  "id": 466413,
+                  "date_maj": "2020-02-29",
+                  "generation": "4G",
+                  "sta_nm_anfr": "9880110089",
+                  "sup_id": 602574,
+                  "adm_lb_nom": "Gouv Nelle Calédonie (OPT)",
+                  "emr_dt_service": null,
+                  "_id": 456277,
+                  "coordonnees": [
+                    166.42305555556,
+                    -20.723055555556
+                  ],
+                  "adr_lb_lieu": "MOULI OPT",
+                  "sup_nm_haut": 20,
+                  "coord": "20°43'23''S 166°25'23''E",
+                  "total_de_adm_lb_nom": "",
+                  "en_service": "Projet approuvé",
+                  "tpo_id": 47,
+                  "adr_nm_cp": 98814
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
