@@ -8,7 +8,7 @@
 * Swagger à disposition
 
 ## Auteur.e
-(Léa Crepin)[https://github.com/leacrepin]
-(Corentin Grard)[https://github.com/CorentinGrard]
-(Matthieu Tinnes)[https://github.com/Matthieu42]
-(Alexis Pouzeratte)
+[Léa Crepin](https://github.com/leacrepin)
+[Corentin Grard](https://github.com/CorentinGrard)
+[Matthieu Tinnes](https://github.com/Matthieu42)
+Alexis Pouzeratte
